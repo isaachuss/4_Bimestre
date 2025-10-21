@@ -12,12 +12,13 @@ function App() {
         <h1>FORMULÁRIO</h1>
       </div>
 
-      <div className='div_2'>
+      <div className='div_3'>
+
         <div className='div_label' >
           <label htmlFor="">Nome</label>
           <input type="text" placeholder='Nome' />
         </div>
-      </div>
+      
 
       <div className='div_label'>
         <label htmlFor="">Telefone</label>
@@ -28,7 +29,10 @@ function App() {
         <label htmlFor="">Idade</label>
         <input type="date" placeholder='Idade' />
       </div>
+      
+</div>
 
+<div className='div_3'>
       <div className='div_label'>
         <label htmlFor="">Instagram</label>
         <input type="text" placeholder='Instagram' />
@@ -43,7 +47,9 @@ function App() {
         <label htmlFor="">Pensamento</label>
         <input type="text" placeholder='Pensamento' />
       </div>
+</div>
 
+<div className='div_3'>
       <div className='div_label'>
         <label htmlFor="">Defeito</label>
         <input type="text" placeholder='Defeito' />
@@ -58,7 +64,9 @@ function App() {
         <label htmlFor="">Ultima filme assistida</label>
         <input type="text" placeholder='Ultima filme assistida' />
       </div>
+</div>
 
+<div className='div_3'>
       <div className='div_label'>
         <label htmlFor="">Ultimo jogo jogado</label>
         <input type="text" placeholder='Ultimo jogo jogado' />
@@ -73,7 +81,9 @@ function App() {
         <label htmlFor="">Genero</label>
         <input type="text" placeholder='Genero' />
       </div>
+</div>
 
+<div className='div_3'>
       <div className='div_label'>
         <label htmlFor="">Habilidade especial</label>
         <input type="text" placeholder='Habilidade especial' />
@@ -88,7 +98,7 @@ function App() {
         <label htmlFor="">Time que torce</label>
         <input type="text" placeholder='Time que torce' />
       </div>
-
+</div>
       <div >
         <button>Enviar</button>
       </div>

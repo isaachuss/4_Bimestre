@@ -10,3 +10,9 @@
   display: flex;
   flex-direction: column;
 }
+
+.div_3{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
