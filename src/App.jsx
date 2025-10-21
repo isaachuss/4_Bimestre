@@ -9,25 +9,91 @@ function App() {
   return (
     <>
       <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <h1>FORMULÁRIO</h1>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className='div_2'>
+        <div className='div_label' >
+          <label htmlFor="">Nome</label>
+          <input type="text" placeholder='Nome' />
+        </div>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <div className='div_label'>
+        <label htmlFor="">Telefone</label>
+        <input type="number" placeholder='Telefone' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Idade</label>
+        <input type="date" placeholder='Idade' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Instagram</label>
+        <input type="text" placeholder='Instagram' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">GitHub</label>
+        <input type="text" placeholder='GitHub' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Pensamento</label>
+        <input type="text" placeholder='Pensamento' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Defeito</label>
+        <input type="text" placeholder='Defeito' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Ultima série assistida</label>
+        <input type="text" placeholder='Ultima série assistida' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Ultima filme assistida</label>
+        <input type="text" placeholder='Ultima filme assistida' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Ultimo jogo jogado</label>
+        <input type="text" placeholder='Ultimo jogo jogado' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Música favorita</label>
+        <input type="text" placeholder='Música favorita' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Genero</label>
+        <input type="text" placeholder='Genero' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Habilidade especial</label>
+        <input type="text" placeholder='Habilidade especial' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Poder especial</label>
+        <input type="text" placeholder='Poder especial' />
+      </div>
+
+      <div className='div_label'>
+        <label htmlFor="">Time que torce</label>
+        <input type="text" placeholder='Time que torce' />
+      </div>
+
+      <div >
+        <button>Enviar</button>
+      </div>
+
+
     </>
   )
 }
