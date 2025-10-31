@@ -4,7 +4,21 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+
+  const mudancaDeEmail = (e) => {
+    setEmail(e.target.value);
+  }
+  const mudancaDePassword = (e) => {
+    setPassword(e.target.value);
+  }
+
+  const enviarForms=(e)=>{
+    e.preventDefault()
+    console.log(`Email: ${email}, Senha: ${senha}`)
+  }
 
   return (
     <>
@@ -22,7 +36,7 @@ function App() {
 
       <div className='div_label'>
         <label htmlFor="">Telefone</label>
-        <input type="number" placeholder='Telefone' />
+        <input type="number" placeholder='Telefone'  />
       </div>
 
       <div className='div_label'>
@@ -98,8 +112,12 @@ function App() {
         <label htmlFor="">Time que torce</label>
         <input type="text" placeholder='Time que torce' />
       </div>
+      <div>
+      <h1>CADASTRO</h1>
+      </div>
+      
 </div>
-      <div >
+      <div  >
         <button>Enviar</button>
       </div>
 
