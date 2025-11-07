@@ -15,6 +15,10 @@ function App() {
 
   const enviarForms = (e) => {
     e.preventDefault()
+    fetch('https://www.api.alanleiser.com/user', {
+      method:'POST',
+      body:JSON.stringify()
+    })
     console.log(`Email: ${email}, Senha: ${senha}`)
 
     
@@ -126,7 +130,8 @@ useEffect(() => {
        
 
       </div>
-      <div>
+      <div className='cadastro'>
+        <h2>CADASTRO</h2>
         <form onSubmit={enviarForms}>
           <label htmlFor="email">Email</label>
           <input
