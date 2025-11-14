@@ -3,33 +3,71 @@ import './App.css'
 
 function App() {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [form, setForm] = useState({
+    nome: "",
+    telefone: "",
+    idade: "",
+    instagram: "",
+    github: "",
+    pensamento: "",
+    defeito: "",
+    ultimaSerie: "",
+    ultimoFilme: "",
+    ultimoJogo: "",
+    musica: "",
+    genero: "",
+    habilidadeEspecial: "",
+    poderEspecial: "",
+    time: "",
+    email: "",
+    password: ""
+  });
 
-  const mudancaDeEmail = (e) => {
-    setEmail(e.target.value);
-  }
-  const mudancaDePassword = (e) => {
-    setPassword(e.target.value);
-  }
+  const onSubmitHandle = () => {
+    nome: "",
+    telefone: "",
+    idade: "",
+    instagram: "",
+    github: "",
+    pensamento: "",
+    defeito: "",
+    ultimaSerie: "",
+    ultimoFilme: "",
+    ultimoJogo: "",
+    musica: "",
+    genero: "",
+    habilidadeEspecial: "",
+    poderEspecial: "",
+    time: "",
+    email: "",
+    password: ""
+  };
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
 
   const enviarForms = (e) => {
-    e.preventDefault()
+    e.preventDefault();
+
     fetch('https://www.api.alanleiser.com/user', {
-      method:'POST',
-      body:JSON.stringify()
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form)
     })
-    console.log(`Email: ${email}, Senha: ${senha}`)
+      .then(res => res.json())
+      .then(data => console.log("Resposta da API:", data))
+      .catch(err => console.log("Erro:", err));
 
-    
-  }
+    console.log("ENVIADO:", form);
+  };
 
-useEffect(() => {
+  useEffect(() => {
     fetch("https://www.api.alanleiser.com/")
-    .then(res => res.json())
-    .then(data => console.log(data))
-    .catch(error => console.log('error'))
-}, []);
+      .then(res => res.json())
+      .then(data => console.log(data))
+      .catch(error => console.log('error'))
+  }, []);
 
   return (
     <>
@@ -37,129 +75,123 @@ useEffect(() => {
         <h1>FORMULÁRIO</h1>
       </div>
 
-      <div className='div_3'>
+      {/* AGORA TODO MUNDO ESTÁ EM UM ÚNICO FORM */}
+      <form onSubmit={enviarForms}>
 
-        <div className='div_label' >
-          <label htmlFor="">Nome</label>
-          <input type="text" placeholder='Nome' />
-        </div>
+        <div className='div_3'>
 
+          <div className='div_label'>
+            <label>Nome</label>
+            <input name="nome" type="text" onChange={handleChange} />
+          </div>
 
-        <div className='div_label'>
-          <label htmlFor="">Telefone</label>
-          <input type="number" placeholder='Telefone' />
-        </div>
+          <div className='div_label'>
+            <label>Telefone</label>
+            <input name="telefone" type="number" onChange={handleChange} />
+          </div>
 
-        <div className='div_label'>
-          <label htmlFor="">Idade</label>
-          <input type="date" placeholder='Idade' />
-        </div>
-
-      </div>
-
-      <div className='div_3'>
-        <div className='div_label'>
-          <label htmlFor="">Instagram</label>
-          <input type="text" placeholder='Instagram' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">GitHub</label>
-          <input type="text" placeholder='GitHub' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Pensamento</label>
-          <input type="text" placeholder='Pensamento' />
-        </div>
-      </div>
-
-      <div className='div_3'>
-        <div className='div_label'>
-          <label htmlFor="">Defeito</label>
-          <input type="text" placeholder='Defeito' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Ultima série assistida</label>
-          <input type="text" placeholder='Ultima série assistida' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Ultima filme assistida</label>
-          <input type="text" placeholder='Ultima filme assistida' />
-        </div>
-      </div>
-
-      <div className='div_3'>
-        <div className='div_label'>
-          <label htmlFor="">Ultimo jogo jogado</label>
-          <input type="text" placeholder='Ultimo jogo jogado' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Música favorita</label>
-          <input type="text" placeholder='Música favorita' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Genero</label>
-          <input type="text" placeholder='Genero' />
-        </div>
-      </div>
-
-      <div className='div_3'>
-        <div className='div_label'>
-          <label htmlFor="">Habilidade especial</label>
-          <input type="text" placeholder='Habilidade especial' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Poder especial</label>
-          <input type="text" placeholder='Poder especial' />
-        </div>
-
-        <div className='div_label'>
-          <label htmlFor="">Time que torce</label>
-          <input type="text" placeholder='Time que torce' />
-
-
+          <div className='div_label'>
+            <label>Idade</label>
+            <input name="idade" type="date" onChange={handleChange} />
+          </div>
 
         </div>
 
-       
+        <div className='div_3'>
+          <div className='div_label'>
+            <label>Instagram</label>
+            <input name="instagram" type="text" onChange={handleChange} />
+          </div>
 
-      </div>
-      <div className='cadastro'>
-        <h2>CADASTRO</h2>
-        <form onSubmit={enviarForms}>
-          <label htmlFor="email">Email</label>
+          <div className='div_label'>
+            <label>GitHub</label>
+            <input name="github" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Pensamento</label>
+            <input name="pensamento" type="text" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className='div_3'>
+          <div className='div_label'>
+            <label>Defeito</label>
+            <input name="defeito" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Ultima série assistida</label>
+            <input name="ultimaSerie" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Ultimo filme assistido</label>
+            <input name="ultimoFilme" type="text" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className='div_3'>
+          <div className='div_label'>
+            <label>Ultimo jogo jogado</label>
+            <input name="ultimoJogo" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Música favorita</label>
+            <input name="musica" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Gênero</label>
+            <input name="genero" type="text" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className='div_3'>
+          <div className='div_label'>
+            <label>Habilidade especial</label>
+            <input name="habilidadeEspecial" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Poder especial</label>
+            <input name="poderEspecial" type="text" onChange={handleChange} />
+          </div>
+
+          <div className='div_label'>
+            <label>Time que torce</label>
+            <input name="time" type="text" onChange={handleChange} />
+          </div>
+        </div>
+
+        <div className='cadastro'>
+          <h2>CADASTRO</h2>
+
+          <label>Email</label>
           <input
-            id="email"
-            type="email"
             name="email"
-            value={email}
-            onChange={(e) => mudancaDeEmail(e)} />
-        </form>
+            type="email"
+            value={form.email}
+            onChange={handleChange}
+          />
 
-        <form onSubmit={enviarForms}>
-          <label htmlFor="password">Senha</label>
+          <label>Senha</label>
           <input
-            id="password"
-            type="password"
             name="password"
-            value={password}
-            onChange={(e) => mudancaDePassword(e)} />
+            type="password"
+            value={form.password}
+            onChange={handleChange}
+          />
 
           <div className="register">
-            <button className="button" type="submite">Cadastrar</button>
+            <button className="button" type="submit">Cadastrar</button>
           </div>
-        </form>
-      </div>
+        </div>
 
-
+      </form>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
